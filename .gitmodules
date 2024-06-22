@@ -1,0 +1,9 @@
+[submodule "EnsayoEnergiaCinetica"]
+	path = EnsayoEnergiaCinetica
+	url = https://github.com/exequielpagliari/EnsayoEnergiaCinetica
+[submodule "EnsayoEPG"]
+	path = EnsayoEPG
+	url = https://github.com/exequielpagliari/EnsayoEPG
+[submodule "EnsayoFuerzaElectroestatica"]
+	path = EnsayoFuerzaElectroestatica
+	url = https://github.com/exequielpagliari/EnsayoFuerzaElectroestatica
