@@ -6,6 +6,7 @@ En este proyecto de Unity ese encuentran diversos ensayos para hacer un análisi
 Los ensayos son:
 
 ## Energía Cinética
+https://exequielpagliari.github.io/EnsayoEnergiaCinetica/
 
 ## Energía Potencial Gravitatorio
 
