@@ -12,3 +12,4 @@ https://exequielpagliari.github.io/EnsayoEnergiaCinetica/
 https://exequielpagliari.github.io/EnsayoEPG/
 
 ## Fuerza Electroestática
+https://exequielpagliari.github.io/EnsayoFuerzaElectroestatica/
