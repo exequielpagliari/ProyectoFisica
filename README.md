@@ -9,5 +9,6 @@ Los ensayos son:
 https://exequielpagliari.github.io/EnsayoEnergiaCinetica/
 
 ## Energía Potencial Gravitatorio
+https://exequielpagliari.github.io/EnsayoEPG/
 
 ## Fuerza Electroestática
