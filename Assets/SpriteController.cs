@@ -1,10 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
+
+[System.Serializable] public struct cordenadas
+{
+    [SerializeField] public float x;
+    [SerializeField] public float y;
+};
+
 
 public class SpriteController : MonoBehaviour
 {
-    [SerializeField] List<Sprite> spriteList = new List<Sprite> (); 
+
+
+    [SerializeField] List<Sprite>   spriteList = new List<Sprite> (); 
+    [SerializeField] List<cordenadas>   xyPositionCollider = new List<cordenadas> ();
+    [SerializeField] List<cordenadas>   xyOffsetCollider = new List<cordenadas> ();
     private Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     
@@ -17,7 +29,7 @@ public class SpriteController : MonoBehaviour
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-
+        SetCollider(0);
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         
@@ -29,33 +41,47 @@ public class SpriteController : MonoBehaviour
     {
         if(rb.mass < 60 )
         {
-            //1.45x 1.1y
+            //1.28x 3.6y
+            //0.05x 1.39y offset
+            
             spriteRenderer.sprite = spriteList[0];
-            boxCollider.size = new Vector2(1.45f,1.1f); 
+            SetCollider(0);
         }
         else if(rb.mass < 250)
         {
-            //1.63x 1.14y
-            boxCollider.size = new Vector2(1.63f,1.4f); 
+            //1.4x 3.6y
+            //0.05x 1.25y offset
+            spriteRenderer.sprite = spriteList[1];
+            SetCollider(1);
             
         }
         else if(rb.mass < 1000)
         {
-            //2.12x 1.23y
+            //2x 3.6y
+            //0.05x 1.26y offset
+
             spriteRenderer.sprite = spriteList[2];
-            boxCollider.size = new Vector2(2.12f,1.23f); 
+            SetCollider(2);
         }
         else if(rb.mass < 2500)
         {
-            //3.16x 1.34y
+            //2.81x 3.6y
+            //0.05x 1.26y offset
             spriteRenderer.sprite = spriteList[3];
-            boxCollider.size = new Vector2(3.16f,1.34f); 
+            SetCollider(3);
         }
         else
         {
-            //4.3x 2.1y
+            //3.91x 3.6
+            //0.05x 0.84y offset
             spriteRenderer.sprite = spriteList[4];
-            boxCollider.size = new Vector2(4.3f,2.1f); 
+            SetCollider(4);
         }
+    }
+
+    void SetCollider(int collider)
+    {
+        boxCollider.size = new Vector2(xyPositionCollider[collider].x, xyPositionCollider[collider].y);
+        boxCollider.offset = new Vector2(xyOffsetCollider[collider].x, xyOffsetCollider[collider].y); 
     }
 }
